@@ -56,7 +56,6 @@ app.use(cookieParser());
 const allowedOrigins = (process.env.ALLOWED_ORIGINS || "http://localhost:5173,http://localhost:5174")
   .split(",")
   .map(s => s.trim());
-];
 
 app.use(
   cors({
