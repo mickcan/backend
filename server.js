@@ -53,10 +53,9 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Configure CORS with dynamic origin validation
-const allowedOrigins = [
-  "http://localhost:3001",
-  "http://localhost:5173",
-  "http://localhost:3000",
+const allowedOrigins = (process.env.ALLOWED_ORIGINS || "http://localhost:5173,http://localhost:5174")
+  .split(",")
+  .map(s => s.trim());
 ];
 
 app.use(
