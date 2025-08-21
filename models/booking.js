@@ -22,6 +22,7 @@ const bookingSchema = new mongoose.Schema(
     },
     timeSlot: {
       type: String,
+      enum: ["Morning", "Afternoon", "Night", "Full Day"], // <-- enum toegevoegd
       required: true,
     },
     startTime: {

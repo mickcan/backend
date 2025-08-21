@@ -40,6 +40,14 @@ const roomSchema = new mongoose.Schema(
       type: Number,
       min: 0,
     },
+
+    // ✅ Nieuw: apart veld voor "Hele dag" prijs
+    allDayPrice: {
+      type: Number,
+      min: 0,
+      default: null, // blijft uitgeschakeld tot je een prijs invult
+    },
+
     amenities: {
       type: String,
       default: "",
